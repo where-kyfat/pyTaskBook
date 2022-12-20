@@ -49,7 +49,7 @@ class WordParser(BaseParser):
         correct = []
         for number, answer in enumerate(raw_answers):
             cur_string = re.sub(r'^\w[).]\s?[.]?', '', answer.text.strip()).strip()  # Remove numeration of answers
-            cur_string = re.sub(r'[.;]$', '', cur_string)  # Remove end symbols (like '.', ';')
+            cur_string = re.sub(r'[.;+]$', '', cur_string.strip()).strip()  # Remove end symbols (like '.', ';', '+')
             result.append(cur_string)
 
             for symbol in answer.runs:  # find correct
