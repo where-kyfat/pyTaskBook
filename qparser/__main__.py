@@ -19,6 +19,8 @@ if __name__ == '__main__':
     parser.add_argument('--path-to-save', help='path to save questionnaire (default value in config.py)',
                         default=QUESTIONNAIRE_FILE)
     parser.add_argument('--save-xlsx', action='store_true', default=False, help='save in xlsx format')
+    parser.add_argument('--add-alphabet', action='store_true', default=False,
+                        help='add alphabet enumeration to answers')
 
     args = parser.parse_args()
 
@@ -40,6 +42,7 @@ if __name__ == '__main__':
         path_for_parse=files,
         path_to_save=args.path_to_save,
         add_to_quest=args.path_to_existing,
-        save_xlsx=args.save_xlsx
+        save_xlsx=args.save_xlsx,
+        add_alphabet=args.add_alphabet
     )
     print(f'Parsed questionnaire saved in {inst_parser()}')
