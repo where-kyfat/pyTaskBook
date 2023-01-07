@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "pytaskbook"
+version = "0.1.0"
+description = ""
+authors = ["where-kyfat <oleg.shabarshin@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pandas = "^1.5.2"
+python-docx = "^0.8.11"
+openpyxl = "^3.0.10"
+
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^0.991"
+pre-commit = "^2.21.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
